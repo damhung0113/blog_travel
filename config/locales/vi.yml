@@ -18,6 +18,12 @@ vi:
       profile: "Hồ sơ"
       setting: "Cài đặt"
       logout: "Đăng xuất"
+      hotel: "Khách sạn"
+      restaurant: "Nhà hàng"
+      discovery: "Khám phá"
+      enter: "Nhập thông tin"
+      district: "Quận"
+      place: "Địa điểm"
     header:
       welcome: "Chào mừng bạn đến Blog của chúng tôi!"
       content: "Thật vui được gặp bạn"
@@ -78,6 +84,8 @@ vi:
     destroy:
       success_destroy: Xóa Blog thành công
       failed_destroy: Xóa Blog thất bại
+      success: Tạo thành công
+      failed: Tạo thất bại
   users:
     new:
       title: "Đăng ký"
@@ -89,7 +97,7 @@ vi:
       change_s: "Lưu thay đổi"
   shared:
     error_messages:
-      contant: "Nội dung biểu mẫu"
+      form_contant: "Nội dung biểu mẫu"
       error: "lỗi"
   sessions:
     new:
@@ -104,3 +112,49 @@ vi:
   controllers:
     session:
       err: "Thông tin đăng nhập không chính xác"
+  districts:
+    new:
+      enter: "Nhập quận"
+      name: "Nhập tên quận"
+      infor: "Nhập thông tin"
+      submit: "Xác nhận"
+  places:
+    new:
+      enter: "Nhập thông tin"
+    edit:
+      update: "Cập nhật thông tin"
+    index:
+      search: "Tìm kiếm"
+      hotel: "Khách sạn"
+      restaurant: "Nhà hàng"
+    place:
+      description: "Miêu tả: "
+      evaluate: "Đánh giá: "
+      cost: "Giá: "
+      address: "Địa chỉ: "
+      delete: "Xóa"
+      edit: "Sửa"
+      sure: "Chắc chắn xóa ?"
+    form:
+      category: "Chọn thể loại"
+      select: "- Lựa chọn -"
+      district: "Chọn quận"
+      name: "Tên"
+      enter_name: "Nhập tên"
+      description: "Miêu tả"
+      enter_description: "Nhập miêu tả"
+      address: "Địa chỉ"
+      enter_address: "Nhập địa chỉ"
+      evaluate: "Đánh giá"
+      cost: "Giá"
+      enter_cost: "Nhập giá"
+      photo: "Ảnh"
+      submit: "Xác nhận"
+  create_success: "Tạo thành công"
+  create_fail: "Tạo thất bại"
+  delete_success: "Xóa thành công"
+  delete_fail: "Xóa thất bại"
+  update_success: "Cập nhật thành công"
+  not_found: "Không tìm thấy"
+  hotel: "Khách sạn"
+  restaurant: "Nhà hàng"

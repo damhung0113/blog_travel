@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-4">
+    <%= image_tag place.photo.url, class: "photo" if place.photo? %>
+  </div>
+  <div class="col-8">
+    <div class="name_place">
+      <%= place.name %>
+    </div>
+    <span class="item">
+      <%= t ".description" %>
+    </span><%= place.description %><br>
+    <span class="item">
+      <%= t ".evaluate" %>
+    </span><% place.vote.times do %>
+      <i class="fa fa-star"></i>
+    <% end %><br>
+    <span class="item">
+      <%= t ".address" %>
+    </span><%= place.address %><br>
+    <span class="item">
+      <%= t ".cost" %>
+    </span><%= place.cost %><br>
+    <%= link_to t(".delete"), place, method: :delete,
+      data: { confirm: t(".sure") } %>
+    <%= link_to t(".edit"), edit_place_path(place) %>
+  </div>
+</div><hr>
