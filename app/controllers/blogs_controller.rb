@@ -45,7 +45,7 @@ class BlogsController < ApplicationController
 
   def destroy
     if @blog.destroy
-      lash[:success] = t ".success_destroy"
+      flash[:success] = t ".success_destroy"
       redirect_to blogs_path
     else
       flash[:danger] = t ".failed_destroy"

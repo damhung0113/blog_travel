@@ -118,6 +118,10 @@ en:
       name: "Enter district name"
       infor: "Enter information"
       submit: "Submit"
+      sure: "Are you sure ?"
+      list: "List of all district"
+      sum: "There are"
+      district: "district"
   places:
     new:
       enter: "Enter information"
@@ -127,6 +131,11 @@ en:
       search: "Search"
       hotel: "Hotel"
       restaurant: "Restaurant"
+      order: "Order by star: "
+      search_address: "Search by address: "
+      new_blog: "New posts: "
+      authors: "Authors: "
+      posted: "Posted: "
     place:
       description: "Description: "
       evaluate: "Evaluate: "
@@ -135,6 +144,7 @@ en:
       delete: "Delete"
       edit: "Edit"
       sure: "Are you sure ?"
+      district: "District: "
     form:
       category: "Select category"
       select: "- Select -"

@@ -17,3 +17,4 @@ maximum_length_address: 250
 minximum_vote: 0
 maximum_length_cost: 250
 paginate: 5
+paginate_blog: 3

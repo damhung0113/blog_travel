@@ -18,7 +18,7 @@
             <%= link_to "#", class: "dropdown-toggle fix_color", "data-toggle": "dropdown" do %>
               <%= t ".discovery" %><b class="caret"></b>
             <% end %>
-            <ul class="dropdown-menu fix_center">
+            <ul class="dropdown-menu fix_menu">
               <li><%= link_to t(".hotel"), places_path(status: :hotel) %></li>
               <li><%= link_to t(".restaurant"), places_path(status: :restaurant) %></li>
             </ul>
@@ -27,7 +27,7 @@
             <%= link_to "#", class: "dropdown-toggle fix_color", "data-toggle": "dropdown" do %>
               <%= t ".enter" %><b class="caret"></b>
             <% end %>
-            <ul class="dropdown-menu fix_center">
+            <ul class="dropdown-menu fix_menu">
               <li><%= link_to t(".district"), new_district_path %></li>
               <li><%= link_to t(".place"), new_place_path %></li>
             </ul>
