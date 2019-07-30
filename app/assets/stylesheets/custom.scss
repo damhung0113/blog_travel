@@ -64,6 +64,15 @@ h5 {
   width: 500px;
 }
 
+.fix_img_show {
+  width: 500px;
+  margin-left: 110px;
+}
+
+.fix_cmt {
+  margin-left: 50px;
+}
+
 .fix_dropdown {
   padding-top: 14px;
   margin-right: 10px
@@ -100,6 +109,10 @@ select {
   margin-left: 150px;
 }
 
+.replies {
+  margin-left: 65px;
+}
+
 .form-btn {
   display: inline-block;
   background: $btn_background1;
@@ -109,6 +122,19 @@ select {
   padding: 10px 39px;
   border-radius: 5px;
   margin-top: 15px;
+  cursor: pointer; }
+  .form-btn:hover {
+    background: $btn_background2 }
+
+.form-cmt {
+  display: inline-block;
+  margin-bottom: 10px;
+  background: $btn_background1;
+  color: $btn_background3;
+  border-bottom: none;
+  width: auto;
+  padding: 5px 39px;
+  border-radius: 5px;
   cursor: pointer; }
   .form-btn:hover {
     background: $btn_background2 }

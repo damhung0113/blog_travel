@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_012311) do
+ActiveRecord::Schema.define(version: 2019_08_09_151654) do
 
   create_table "blogs", force: :cascade do |t|
     t.integer "user_id"
@@ -44,11 +44,26 @@ ActiveRecord::Schema.define(version: 2019_08_07_012311) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
+  create_table "comment_hierarchies", id: false, force: :cascade do |t|
+    t.integer "ancestor_id", null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations", null: false
+    t.index ["ancestor_id", "descendant_id", "generations"], name: "comment_anc_desc_udx", unique: true
+    t.index ["descendant_id"], name: "comment_desc_idx"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "parent_id"
+    t.string "commentable_type"
+    t.integer "commentable_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["commentable_id"], name: "index_comments_on_commentable_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["commentable_type"], name: "index_comments_on_commentable_type"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "districts", force: :cascade do |t|

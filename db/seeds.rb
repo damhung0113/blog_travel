@@ -14,6 +14,7 @@ User.create(
     #password: Faker::Internet.password
   }])
 end
+
 name_district = ["Ho Hoan Kiem", "Hai Ba Trung", "Hoang Mai", "Tay Bac"]
 
 name_district.each do |name|

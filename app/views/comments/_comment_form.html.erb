@@ -1,0 +1,8 @@
+<%= form_for [commentable, comment_new] do |f| %>
+  <%= f.hidden_field :parent_id, value: parent_id %>
+  <%= f.hidden_field :commentable_id, value: commentable.id %>
+  <%= f.hidden_field :type, value: comment_new.commentable_type %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.text_field :content, placeholder: t(".add"), class: "form-control" %>
+  <%= f.submit t(".comment"), class: "form-cmt" %>
+<% end %>

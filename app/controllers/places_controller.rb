@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+  before_action :admin_user, except: %i(index show)
   before_action :load_place, only: %i(show edit update destroy)
   before_action :order_place, only: :index
 
@@ -11,7 +12,10 @@ class PlacesController < ApplicationController
     @place = Place.new
   end
 
-  def show; end
+  def show
+    @commentable = @place
+    @comment = @commentable.comments.build
+  end
 
   def edit; end
 
@@ -49,11 +53,17 @@ class PlacesController < ApplicationController
   private
 
   def order_place
-    @places = Place.send(params[:status])
-                   .find_address(params[:search])
-                   .order_by_vote(params[:order])
-                   .page(params[:page])
-                   .per Settings.paginate
+    if params[:status] == Settings.place_type
+      @places = Place.hotel.find_address(params[:search])
+                     .order_by_vote(params[:order])
+                     .page(params[:page])
+                     .per Settings.paginate
+    else
+      @places = Place.restaurant.find_address(params[:search])
+                     .order_by_vote(params[:order])
+                     .page(params[:page])
+                     .per Settings.paginate
+    end
   end
 
   def place_params
@@ -66,5 +76,9 @@ class PlacesController < ApplicationController
     return if @place
     flash[:danger] = t "not_found"
     redirect_to root_url
+  end
+
+  def admin_user
+    redirect_to root_url unless current_user.is_admin?
   end
 end

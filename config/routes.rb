@@ -3,10 +3,6 @@ Rails.application.routes.draw do
     root "static_pages#home"
     mount Ckeditor::Engine => "/ckeditor"
 
-    resources :blogs do
-      resources :likes
-    end
-
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
     get "/login", to: "sessions#new"
@@ -14,8 +10,13 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :users
     resources :districts
-    resources :places
-    resources :blogs
+    resources :blogs do
+      resources :likes
+      resources :comments
+    end
     resources :bookmarks, only: %i(create destroy)
+    resources :places do
+      resources :comments
+    end
   end
 end

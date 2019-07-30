@@ -67,6 +67,9 @@ GEM
       orm_adapter (~> 0.5.0)
       terrapin
     climate_control (0.2.0)
+    closure_tree (7.0.0)
+      activerecord (>= 4.2.10)
+      with_advisory_lock (>= 4.0.0)
     cocoon (1.2.14)
     coderay (1.1.2)
     coffee-rails (4.2.2)
@@ -272,6 +275,8 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+    with_advisory_lock (4.0.0)
+      activerecord (>= 4.2)
 
 PLATFORMS
   ruby
@@ -284,6 +289,7 @@ DEPENDENCIES
   byebug
   carrierwave
   ckeditor (~> 4.3)
+  closure_tree
   cocoon (~> 1.2, >= 1.2.14)
   coffee-rails (~> 4.2)
   config

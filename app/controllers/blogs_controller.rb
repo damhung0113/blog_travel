@@ -43,6 +43,8 @@ class BlogsController < ApplicationController
 
   def show
     @bookmark_blog = Bookmark.get_bookmark current_user.id, @blog.id, Settings.blog_s
+    @commentable = @blog
+    @comment = @commentable.comments.build
   end
 
   def destroy

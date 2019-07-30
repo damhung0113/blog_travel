@@ -2,6 +2,7 @@ class Place < ApplicationRecord
   has_many :bookmarks, dependent: :destroy, as: :bookmarkable
   belongs_to :district
   enum status: {hotel: 0, restaurant: 1}
+  has_many :comments, as: :commentable, dependent: :destroy
   mount_uploader :photo, PhotoUploader
   PLACE_ATTRIBUTE = %i(name district_id description address vote cost
     photo status).freeze

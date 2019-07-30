@@ -1,0 +1,22 @@
+<%= link_to comment.user.name, comment.user %>
+<%= comment.content %><br>
+Posted: <%= comment.created_at.strftime("%d-%m-%Y") %>
+<% if comment.user == current_user %>
+  <% if comment.commentable_type == "Blog" %>
+    <%= link_to t(".delete"), blog_comment_path(commentable, comment),
+      method: :delete, data: { confirm: t(".sure") } %>
+  <% else %>
+    <%= link_to t(".delete"), place_comment_path(commentable, comment),
+      method: :delete, data: { confirm: t(".sure") } %>
+  <% end %>
+  <i class="fa fa-trash"></i>
+<% end %><hr>
+<% if logged_in? && comment.parent_id.nil? %>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-11">
+      <%= render "comments/comment_form", commentable: commentable, parent_id: comment.id,
+          comment_new: comment_new %>
+    </div>
+  </div>
+<% end %>

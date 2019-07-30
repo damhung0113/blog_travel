@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :generals, as: :generalable
   has_many :likes, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
-
+  has_many :comments, dependent: :destroy
   before_save{email.downcase!}
 
   validates :name, presence: true, length: {maximum: Settings.maxName}
