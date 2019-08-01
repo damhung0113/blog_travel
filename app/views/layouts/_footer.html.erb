@@ -1,0 +1,64 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="static">
+            <div >
+                <%= t(".statistic") %>
+            </div>
+            <div class="footer-down-stats">
+                <div class="footer-down-stats-header"><%= t(".local") %></div>
+                <div class="footer-down-stats-desc"><%= t(".city") %></div>
+            </div>
+            <div class="footer-down-stats">
+                <div class="footer-down-stats-header"><%= t(".user") %></div>
+                <div class="footer-down-stats-desc"><%= t(".content") %></div>
+            </div>
+            <div class="footer-down-stats">
+                <div class="footer-down-stats-header"><%= t(".comment") %></div>
+                <div class="footer-down-stats-desc"><%= t(".share") %></div>
+            </div>
+            <div class="footer-down-stats">
+                <div class="footer-down-stats-header"><%= t(".checkin") %></div>
+                <div class="footer-down-stats-desc"><%= t(".done") %></div>
+            </div>
+            <div class="footer-down-stats">
+                <div class="footer-down-stats-header"><%= t(".image") %></div>
+                <div class="footer-down-stats-desc"><%= t(".upload") %></div>
+            </div>
+            <div class="footer-down-stats">
+                <div class="footer-down-stats-header"><%= t(".album") %></div>
+                <div class="footer-down-stats-desc"><%= t(".albumcreate") %></div>
+            </div>
+        </div>
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <%= link_to "https://twitter.com/?lang=vi" do %>
+              <i class="fa fa-twitter"></i>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to "http://facebook.com.vn" do %>
+              <i class="fa fa-facebook-f"></i>
+            <% end %>  
+          </li>
+          <li class="list-inline-item">
+            <%= link_to "https://www.skype.com/en/" do %>
+              <i class="fa fa-skype"></i>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <%= link_to t(".Privacy"), "#" %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to t(".Terms"), "#" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

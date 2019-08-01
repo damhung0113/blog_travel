@@ -2,8 +2,11 @@ source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 gem "bootsnap", ">= 1.1.0", require: false
+gem "bootstrap", "~> 4.3.1"
 gem "coffee-rails", "~> 4.2"
+gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
 gem "puma", "~> 3.11"
 gem "rails"
 gem "rubocop", "~> 0.54.0", require: false
