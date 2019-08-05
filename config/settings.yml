@@ -1,0 +1,9 @@
+blogs:
+  show:
+    take_5: 5
+    take_3: 3
+uploaders:
+  picture:
+    thumb_w: 118
+    thumb_h: 100
+    content: 800

@@ -1,16 +1,21 @@
 @import 'bootstrap';
+
+$gray-medium-light: #dee2e6;
+$white-gray: #ebebe0;
+$white: #fff;
+
+// --- Header-Footer ---
+
 img {
   vertical-align: middle;
   border-style: none;
   width: 20px;
 }
-div.static{
-  float: left;
-  width: 250px;
-  margin-top: 10px;
-  margin-left: 50px;
-  margin-right: 50px;
+
+.static {
+  text-align: left;
 }
+
 .footer-down-stats-desc {
   color: #888;
 }
@@ -20,9 +25,125 @@ div.static{
   padding-bottom: 3px;
   text-transform: lowercase;
 }
-.col-md-4 {
-  -webkit-box-flex: 0;
-  flex: 0 0 33.3333333333%;
-  max-width: 33.3333333333%;
-  margin-top: -260px;
+
+.header_custom {
+  margin-bottom: 120px;
+}
+
+// --- Upload Cover Photo ---
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: $white;
+  cursor: inherit;
+  display: block;
+}
+
+// --- Blog ---
+
+.title {
+ margin-left: 413px;
+ padding-top: 20px;
+}
+
+.box {
+  display: inline-block;
+  width: 27%;
+  height: 250px;
+  margin-left: 53px;
+  margin-bottom: 30px;
+}
+
+.cp_blog {
+  padding-bottom: 30px;
+}
+
+.cover_photo_blog_index {
+  width: 300px;
+  height: 200px;
+}
+
+.topic_blog {
+  padding-top: 5px !important;
+  font-weight: 700;
+  color: black !important;
+  font-size: 16px;
+  height: 50px;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.crop_text_2 {
+  -webkit-line-clamp: 2;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.title_blog {
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.horizontal {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: black;
+  margin: 37px 0;
+}
+
+.cover_photo_show {
+  width: 725px;
+  height: 420px;
+  margin-bottom: 10px;
+}
+
+.rencent_cate_blog {
+  text-align: center;
+  display: inline-block;
+  height: 40px;
+  padding: 5px;
+  width: 100%;
+  background-color: $white-gray;
+}
+
+.img_thumbnail {
+  width: 100%;
+  height: 200px;
+  padding: 0.25rem;
+  background-color: $white;
+  border: 1px solid $gray-medium-light;
+  border-radius: 0.25rem;
+  max-width: 100%;
+}
+
+.box_related {
+  display: inline-block;
+  width: 33%;
+  height: 250px;
+  margin-bottom: 30px;
+}
+
+.submit_create {
+  margin-top: 30px;
 }

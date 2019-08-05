@@ -1,6 +1,6 @@
 en:
   common:
-    base_title: "Blog Discovery Travel"  
+    base_title: "Blog Discovery Travel"
   layouts:
     header:
       logo: "Blog Travel"
@@ -36,3 +36,27 @@ en:
   static_pages:
     home:
       title: "Home"
+  blogs:
+    form:
+      topic: Fill topic for your blog
+      upload_cover_photo: Upload cover photo
+      select_district: Select District
+      address: "Fill Specific Address, example: Number 434, Trần Khát Chân"
+    index:
+      last_blog: LATEST BLOG POSTS
+      title_index: All Blog
+    new:
+      title_new: New Blog
+      btn_create: Create and Share
+      text: Create and Share to everyone
+    show:
+      title_show: Blog
+      authors: "Authors:"
+      posted: "Posted:"
+      address: "Address:"
+      recent_blogs: RECENT BLOGS
+      cate_blogs: CATEGORY BLOGS
+      related_posts: RELATED POSTS
+    create:
+      success: Create Success
+      failed: Create Failed
