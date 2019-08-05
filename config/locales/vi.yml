@@ -73,3 +73,16 @@ vi:
     destroy:
       success_destroy: Xóa Blog thành công
       failed_destroy: Xóa Blog thất bại
+  users:
+    new:
+      title: "Đăng ký"
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận"
+      create: "Tạo tài khoản"
+      change_s: "Lưu thay đổi"
+  shared:
+    error_messages:
+      contant: "Nội dung biểu mẫu"
+      error: "lỗi"

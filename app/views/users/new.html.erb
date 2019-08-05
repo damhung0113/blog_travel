@@ -1,0 +1,26 @@
+ <section class="signup">
+            <div class="container-sign">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title"><%= t(".title") %></h2>
+                        <%= form_for @user do |f| %>
+                        <%= render "shared/error_messages", object: @user  %>
+                            <div class="form-group">
+                                <%= f.text_field :name, class: "form-control",placeholder: t(".name") %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.email_field :email, class: "form-control",placeholder: t(".email") %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.password_field :password, class: "form-control",placeholder: t(".password") %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.password_field :password_confirmation, class: "form-control",placeholder: t(".password_confirmation") %>
+                            </div>
+                            <div class="form-group form-button">
+                                <%= f.submit t(".create"), class: "form-submit" %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </section>

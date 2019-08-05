@@ -7,8 +7,13 @@
   <%= render "layouts/default" %>
   <%= render "layouts/font"%>
 </head>
-<body id="page-top">
+<body>
   <%= render "layouts/navigation"%>
+  <div class="container-body">
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+    
+  <% end %>
   <%= yield %>
   <%= render "layouts/footer" %>
 </body>

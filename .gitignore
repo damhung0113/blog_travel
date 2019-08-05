@@ -21,6 +21,7 @@
 /config/database.yml
 /test
 /public/uploads
+log/development.log
 
 config/settings.local.yml
 config/settings/*.local.yml

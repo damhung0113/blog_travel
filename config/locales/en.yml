@@ -73,3 +73,18 @@ en:
     destroy:
       success_destroy: Delete Success
       failed_destroy: Delete Failed
+      success: Create Success
+      failed: Create Failed
+  users:
+    new:
+      title: "SignUp"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation"
+      create: "Create my account"
+      change_s: "Save changes"  
+  shared:
+    error_messages:
+      form_error: "The form contains "
+      error: "error"

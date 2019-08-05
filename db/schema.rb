@@ -15,10 +15,8 @@ ActiveRecord::Schema.define(version: 2019_08_05_030620) do
   create_table "blogs", force: :cascade do |t|
     t.integer "user_id"
     t.integer "district_id"
-    t.string "cover_photo"
     t.string "topic"
     t.string "address"
-    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["district_id"], name: "index_blogs_on_district_id"
