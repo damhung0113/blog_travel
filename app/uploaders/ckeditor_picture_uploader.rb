@@ -9,7 +9,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process resize_to_fill: [Settings.uploaders.picture.thumb_w,
-      Settings.uploaders.picture.thumb_w]
+      Settings.uploaders.picture.thumb_h]
   end
 
   version :content do

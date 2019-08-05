@@ -19,19 +19,38 @@ class BlogsController < ApplicationController
     end
 
     if @blog.save
-      flash[:success] = t ".success"
+      flash[:success] = t ".success_create"
       redirect_to root_url
     else
-      flash[:danger] = t ".failed"
+      flash[:danger] = t ".failed_create"
       redirect_to new_blog_path
     end
   end
 
-  def edit; end
+  def edit
+    @districts_name = District.pluck :name
+  end
 
-  def update; end
+  def update
+    if @blog.update blog_params
+      flash[:success] = t ".success_update"
+      redirect_to @blog
+    else
+      flash[:danger] = t ".failed_update"
+      redirect_to edit_blog_path
+    end
+  end
 
   def show; end
+
+  def destroy
+    if @blog.destroy
+      lash[:success] = t ".success_destroy"
+      redirect_to blogs_path
+    else
+      flash[:danger] = t ".failed_destroy"
+    end
+  end
 
   private
 

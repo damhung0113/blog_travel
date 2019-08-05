@@ -57,6 +57,19 @@ en:
       recent_blogs: RECENT BLOGS
       cate_blogs: CATEGORY BLOGS
       related_posts: RELATED POSTS
+      dd_edit: Edit
+      dd_delete: Delete
+      delete_confirm: Do you want to delete it?
     create:
-      success: Create Success
-      failed: Create Failed
+      success_create: Create Success
+      failed_create: Create Failed
+    edit:
+      title_edit: Edit Blog
+      btn_edit: Edit Blog
+      text: Edit your blog
+    update:
+      success_update: Update Success
+      failed_update: Update Failed
+    destroy:
+      success_destroy: Delete Success
+      failed_destroy: Delete Failed

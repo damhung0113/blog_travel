@@ -57,3 +57,19 @@ vi:
       recent_blogs: LIÊN QUAN
       cate_blogs: THỂ LOẠI
       related_posts: GẦN NHẤT
+      dd_edit: Chỉnh sửa
+      dd_delete: Xóa
+      delete_confirm: Bạn chắc chắn muốn xóa chứ?
+    create:
+      success_create: Tạo Blog thành công
+      failed_create: Tạo Blog thất bại, vui lòng thử lại
+    edit:
+      title_edit: Sửa Blog
+      btn_edit: Kết thúc chỉnh sửa
+      text: Chỉnh sửa blog của bạn
+    update:
+      success_update: Cập nhập Blog thành công
+      failed_update: Cập nhập Blog thất bại
+    destroy:
+      success_destroy: Xóa Blog thành công
+      failed_destroy: Xóa Blog thất bại
