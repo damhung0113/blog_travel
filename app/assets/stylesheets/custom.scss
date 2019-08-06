@@ -1,0 +1,28 @@
+@import 'bootstrap';
+img {
+  vertical-align: middle;
+  border-style: none;
+  width: 20px;
+}
+div.static{
+  float: left;
+  width: 250px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.footer-down-stats-desc {
+  color: #888;
+}
+.footer-down-stats .footer-down-stats-header {
+  font-weight: 700;
+  font-size: 16px;
+  padding-bottom: 3px;
+  text-transform: lowercase;
+}
+.col-md-4 {
+  -webkit-box-flex: 0;
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+  margin-top: -260px;
+}

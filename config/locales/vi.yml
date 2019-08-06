@@ -1,0 +1,38 @@
+vi:  
+  common:
+    base_title: "Blog Trải nghiệm du lịch"
+  layouts:
+    header:
+      logo: "Blog Du lịch"
+    navigation:
+      en: "EngLish"
+      vi: "Tiếng Việt"
+      home: "Trang chủ"
+      new: "Tin mới"
+      about: "Thông tin"
+      login: "Đăng nhập"
+      logo: "Blog Du lịch"
+      menu: "Mục lục"
+    header:
+      welcome: "Chào mừng bạn đến Blog của chúng tôi!"
+      content: "Thật vui được gặp bạn"
+      signup: "Đăng ký"
+    footer:
+      Privacy: "Chính sách sử dụng"
+      Terms: "Điều khoản sử dụng"
+      statistic: "Thống kê"
+      local: "309 Địa điểm"
+      city: "Hà Nội"
+      user: "38630 người sử dụng"
+      content: "trong & ngoài nước"
+      comment: "1326 bình luận"
+      share: "đã chia sẻ"
+      checkin: "532 check-in"
+      done: "đã thực hiện"
+      image: "928 hình ảnh"
+      upload: "được tải lên"
+      album: "2282 Bộ sưu tập"
+      albumcreate: "bộ sưu tập được tạo"
+  static_pages:
+    home:
+      title: "Trang chủ"

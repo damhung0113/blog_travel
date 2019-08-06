@@ -1,2 +1,38 @@
 en:
-  hello: "Hello world"
+  common:
+    base_title: "Blog Discovery Travel"  
+  layouts:
+    header:
+      logo: "Blog Travel"
+    navigation:
+      en: "Tiếng Anh"
+      vi: "Vietnamese"
+      home: "HOME"
+      new: "NEW"
+      about: "ABOUT"
+      login: "LOGIN"
+      logo: "Blog Travel"
+      menu: "MENU"
+    header:
+      welcome: "Welcome To Our Blog!"
+      content: "It's Nice To Meet You"
+      signup: "Sign Up"
+    footer:
+      Privacy: "Privacy Policy"
+      Terms: "Terms of Use"
+      statistic: "Statistic"
+      local: "309 localtion"
+      city: "Ha Noi"
+      user: "38630 user"
+      content: "in & out contry"
+      comment: "1326 comment"
+      share: "Shared"
+      checkin: "532 check-in"
+      done: "Done"
+      image: "928 picture"
+      upload: "Uploaded"
+      album: "2282 album"
+      albumcreate: "Collection created"
+  static_pages:
+    home:
+      title: "Home"
