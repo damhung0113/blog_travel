@@ -10,6 +10,7 @@ img {
   vertical-align: middle;
   border-style: none;
   width: 20px;
+  
 }
 
 .static {
@@ -151,4 +152,36 @@ img {
 
 .submit {
   margin-top: 30px;
+}
+
+display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
+  display: flex;
+  display: -webkit-flex; }
+
+list-type-ulli, .socials {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.image-sign{
+  width: 294px;
+  height: 314px;
+}
+#page-top{
+  background: #f8f8f8;
+}
+.container-body{
+  margin-top: -75px;
+}
+.img-avatar{
+  width: 350px;
+  height: 314px;
+  margin-left: 20px;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align:center
 }
