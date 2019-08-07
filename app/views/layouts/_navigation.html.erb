@@ -18,7 +18,26 @@
             <%= link_to t(".about"), "#", class: "nav-link js-scroll-trigger" %>
           </li>
           <li class="nav-item">
-            <%= link_to t(".login"), "#", class: "nav-link js-scroll-trigger" %>
+            <% if logged_in? %>
+            <li>
+            <li class="login-header"><%= link_to t(".user"), users_path, class: "a-login"%></li>
+            </li>
+            <li class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
+              <%= t(".account") %> <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li><%= link_to t(".profile"), "#",class: "a-login" %></li>
+              <li><%= link_to t(".setting"), "#",class: "a-login" %></li>
+              <li></li>
+              <li>
+                <%= link_to t(".logout"), logout_path,class: "a-login", method: :delete %>
+              </li>
+            </ul>
+            </li>
+            <% else %>
+              <li class="login-header"><%= link_to t(".login"), login_path ,class: "a-login"%></li>
+            <% end %>
           </li>
           <li class="nav-item">
             <%= link_to image_tag("us.png", alt: "en"), locale:"en" %>
@@ -28,6 +47,4 @@
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
 </header>
