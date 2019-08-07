@@ -1,4 +1,4 @@
-<br><br><% provide :title, t(".title_show") %>
+<% provide :title, @blog.topic %>
 <div class="container pt-5">
   <div class="row">
     <div class="col-8">
@@ -16,6 +16,10 @@
                 <%= link_to t(".dd_delete"), @blog, method: :delete, data: {confirm: t(".delete_confirm")}, class: "dropdown-item text-danger" %>
               </div>
             </div>
+          </div>
+          <% else %>
+          <div class="col-1">
+            <%= render "bookmarks/form_bookmark", blog: @blog, bookmark_blog: @bookmark_blog %>
           </div>
           <% end %>
         </div>

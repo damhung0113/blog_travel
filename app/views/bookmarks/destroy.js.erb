@@ -1,0 +1,7 @@
+<% if @destroy == Settings.blog_s %>
+  $(".bookmark-blog-<%= @blog_bookmarked.id %>")
+    .html("<%= j render('bookmarks/bookmark', blog: @blog_bookmarked) %>");
+<% else %>
+  $(".bookmark-blog-<%= @place_bookmarked.id %>")
+    .html("<%= j render('bookmarks/bookmark', place: @place_bookmarked) %>");
+<% end %>

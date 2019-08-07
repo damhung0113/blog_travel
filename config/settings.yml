@@ -2,6 +2,8 @@ blogs:
   show:
     take_5: 5
     take_3: 3
+  all_blog:
+    take_6: 6
 uploaders:
   picture:
     thumb_w: 118
@@ -18,3 +20,7 @@ minximum_vote: 0
 maximum_length_cost: 250
 paginate: 5
 paginate_blog: 3
+blog_s: "Blog"
+blogs_s: "blogs"
+place_s: "Place"
+places_s: "places"

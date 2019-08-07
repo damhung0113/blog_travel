@@ -8,7 +8,7 @@ vi:
       en: "EngLish"
       vi: "Tiếng Việt"
       home: "Trang chủ"
-      new: "Tin mới"
+      new: "Tạo Blog"
       about: "Thông tin"
       login: "Đăng nhập"
       logo: "Blog Du lịch"
@@ -54,8 +54,8 @@ vi:
       select_district: Chọn một quận
       address: "Điền vào địa chỉ cụ thể, ví dụ: Number 434, Trần Khát Chân"
     index:
-      last_blog: NHỮNG BLOG MỚI NHẤT
       title_index: Tất cả Blog
+      all_blog: TẤT CẢ BLOG
     new:
       title_new: Tạo Blog mới
       btn_create: Tạo và Chia sẻ Blog
@@ -85,8 +85,10 @@ vi:
     destroy:
       success_destroy: Xóa Blog thành công
       failed_destroy: Xóa Blog thất bại
-      success: Tạo thành công
-      failed: Tạo thất bại
+    all_blog:
+      last_blog: NHỮNG BLOG MỚI NHẤT
+      last_place: NHỮNG ĐỊA ĐIỂM HOT
+      view_more: Xem thêm >>
   users:
     new:
       title: "Đăng ký"
@@ -169,3 +171,4 @@ vi:
   not_found: "Không tìm thấy"
   hotel: "Khách sạn"
   restaurant: "Nhà hàng"
+  login_first: Vui lòng đăng nhập

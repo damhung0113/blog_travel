@@ -1,7 +1,7 @@
 <%= form_for @blog do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
-  <%= f.text_field :topic, class: "form-control", placeholder: t(".topic") %></br>
+  <%= f.text_field :topic, class: "form-control", placeholder: t(".topic"), required: true %></br>
 
   <span class="btn btn-large btn-info btn-file">
     <%= t ".upload_cover_photo" %>
@@ -12,17 +12,17 @@
   <br><br>
 
   <p>
-    <%= f.select :district, @districts_name, prompt: t(".select_district") %>
+    <%= f.select :district, @districts_name, { include_blank: t(".select_district") }, required: true %>
   </p>
 
   <%= f.text_field :address, class: "form-control",
-    placeholder: t(".address") %></br>
+    placeholder: t(".address"), required: true %></br>
 
   <div class="field">
-    <%= f.text_area :content, class: "ckeditor" %>
+    <%= f.text_area :content, class: "ckeditor", required: true %>
   </div>
 
   <div class="submit">
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <%= f.submit yield(:button_text), class: "btn-primary" %>
   </div>
 <% end %>
