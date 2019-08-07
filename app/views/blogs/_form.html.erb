@@ -1,0 +1,28 @@
+<%= form_for @blog do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.text_field :topic, class: "form-control", placeholder: t(".topic") %></br>
+
+  <span class="btn btn-large btn-info btn-file">
+    <%= t ".upload_cover_photo" %>
+    <%= f.file_field :cover_photo, id: "cover_photo_upload" %>
+  </span>
+  <img id="img_prev"/>
+  <%= f.hidden_field :cover_photo_cache %>
+  <br><br>
+
+  <p>
+    <%= f.select :district, @districts_name, prompt: t(".select_district") %>
+  </p>
+
+  <%= f.text_field :address, class: "form-control",
+    placeholder: t(".address") %></br>
+
+  <div class="field">
+    <%= f.text_area :content, class: "ckeditor" %>
+  </div>
+
+  <div class="submit_create">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>

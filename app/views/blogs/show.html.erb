@@ -1,0 +1,55 @@
+<% provide :title, t(".title_show") %>
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-8">
+      <div class="title_blog">
+        <%= @blog.topic %>
+      </div>
+      <div class="cp_blog">
+        <%= image_tag @blog.cover_photo.to_s, class: "cover_photo_show" %>
+        <b><%= t ".authors" %></b>
+        <%= @blog.user.name %><br>
+        <b><%= t ".posted" %></b>
+        <%= @blog.created_at.strftime("%m-%d-%Y") %><br>
+        <b><%= t ".address" %></b>
+        <%= @blog.address %>
+        | <%= @blog.district.name %>
+      </div>
+      <div class="para_blog">
+        <%= raw @blog.content %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div>
+        <h3 class="rencent_cate_blog"><%= t ".recent_blogs" %></h3>
+        <% Blog.sort_by_time.take(Settings.blogs.show.take_5).each do |blog| %>
+          <div class="mb-3">
+            <%= link_to blog.topic, blog %>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <h3 class="rencent_cate_blog"><%= t ".cate_blogs" %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5 horizontal"></div>
+    <div class="col-2 text-center">
+      <h2><%= t ".related_posts" %></h2>
+    </div>
+    <div class="col-5 horizontal"></div>
+  </div>
+  <div class="related">
+    <% Blog.get_by_author(@blog.user.id).take(Settings.blogs.show.take_3).each do |blog| %>
+      <div class="box_related">
+        <div>
+          <%= image_tag blog.cover_photo.to_s, class: "img_thumbnail" %>
+        </div>
+        <div class="post-article">
+          <span><%= link_to blog.topic, blog, class: "topic_blog crop_text_2" %> </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

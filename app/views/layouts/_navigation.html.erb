@@ -1,31 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-  <div class="container">
-    <%= link_to t(".logo"), root_path , class: "navbar-brand js-scroll-trigger" %>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <%= t(".menu") %>
-      <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav text-uppercase ml-auto">
-        <li class="nav-item">
-          <%= link_to t(".home"), "#", class: "nav-link js-scroll-trigger" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t(".new"), "#", class: "nav-link js-scroll-trigger" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t(".about"), "#", class: "nav-link js-scroll-trigger" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t(".login"), "#", class: "nav-link js-scroll-trigger" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to image_tag("us.png", alt: "en"), locale:"en" %>  
-        </li>
-        <li class="nav-item">
-          <%= link_to image_tag("vn.png", alt: "vi"), locale:"vi" %>
-        </li>  
-      </ul>
+<header class="header_custom">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
+    <div class="container">
+      <%= link_to t(".logo"), root_path , class: "navbar-brand js-scroll-trigger" %>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <%= t(".menu") %>
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <%= link_to t(".home"), root_url, class: "nav-link js-scroll-trigger" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(".new"), "#", class: "nav-link js-scroll-trigger" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(".about"), "#", class: "nav-link js-scroll-trigger" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(".login"), "#", class: "nav-link js-scroll-trigger" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to image_tag("us.png", alt: "en"), locale:"en" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to image_tag("vn.png", alt: "vi"), locale:"vi" %>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>

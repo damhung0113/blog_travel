@@ -1,4 +1,4 @@
-vi:  
+vi:
   common:
     base_title: "Blog Trải nghiệm du lịch"
   layouts:
@@ -36,3 +36,24 @@ vi:
   static_pages:
     home:
       title: "Trang chủ"
+  blogs:
+    form:
+      topic: Điền chủ đề cho Blog của bạn
+      upload_cover_photo: Tải lên ảnh bìa
+      select_district: Chọn một quận
+      address: "Điền vào địa chỉ cụ thể, ví dụ: Number 434, Trần Khát Chân"
+    index:
+      last_blog: NHỮNG BLOG MỚI NHẤT
+      title_index: Tất cả Blog
+    new:
+      title_new: Tạo Blog mới
+      btn_create: Tạo và Chia sẻ Blog
+      text: Tạo và chia sẻ Blog với mọi người
+    show:
+      title_show: Blog
+      authors: "Tác giả:"
+      posted: "Thời gian:"
+      address: "Địa chỉ:"
+      recent_blogs: LIÊN QUAN
+      cate_blogs: THỂ LOẠI
+      related_posts: GẦN NHẤT
