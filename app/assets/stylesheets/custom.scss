@@ -144,13 +144,6 @@ select {
 
 // --- Header-Footer ---
 
-img {
-  vertical-align: middle;
-  border-style: none;
-  width: 20px;
-
-}
-
 .static {
   text-align: left;
 }
@@ -222,7 +215,12 @@ div.static{
   width: 27%;
   height: 250px;
   margin-left: 53px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.box_user {
+  display: inline-block;
+  width: 46%;
 }
 
 .cp_blog {
@@ -322,8 +320,29 @@ div.static{
   margin-bottom: 20px;
 }
 
+<<<<<<< 3707a609d520e95bc85d45bcc6d5a304271d2c82
 // --- End Blog ---
 
+=======
+.paginate_blog {
+  margin-left: 385px;
+}
+
+// --- End Blog ---
+
+// --- User ---
+
+.all_user {
+  margin-bottom: 20px;
+}
+
+.user_info {
+
+}
+
+// --- End User ---
+
+>>>>>>> follow user
 display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
   display: flex;
   display: -webkit-flex; }

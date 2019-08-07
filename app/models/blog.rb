@@ -4,6 +4,7 @@ class Blog < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :bookmarks, dependent: :destroy, as: :bookmarkable
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy, as: :bookmarkable
   belongs_to :user
   belongs_to :district
 

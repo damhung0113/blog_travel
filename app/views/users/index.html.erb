@@ -1,0 +1,17 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <h1><%= t ".title" %></h1>
+  <div>
+    <% @users.each do |user| %>
+      <div class="all_user">
+        <%= display_avatar user %>
+        <%= link_to user.name, user, class: "text_color" %>
+          | <%= link_to t(".delete"), user, method: :delete,
+            data: {confirm: t(".sure")} %>
+      </div>
+    <% end %>
+  </div>
+  <div id="paginator">
+    <%= paginate @users, theme: "twitter-bootstrap-4" %>
+  </div>
+</div>

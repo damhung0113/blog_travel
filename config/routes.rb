@@ -12,17 +12,30 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    resources :users
-    resources :districts
+    get "/auth/:provider/callback", to: "sessions#create"
+    get "/auth/failure", to: "sessions#failure"
 
     resources :blogs do
       resources :likes
       resources :comments
     end
-    resources :bookmarks, only: %i(create destroy)
+
+    resources :users do
+      member do
+        resources :followers
+        resources :following
+      end
+    end
 
     resources :places do
       resources :comments
     end
+
+    resources :users
+    resources :districts
+    resources :places
+    resources :blogs
+    resources :bookmarks, only: %i(create destroy)
+    resources :relationships, only: %i(create destroy)
   end
 end

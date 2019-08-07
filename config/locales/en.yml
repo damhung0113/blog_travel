@@ -24,6 +24,8 @@ en:
       enter: "Enter infor"
       district: "District infor"
       place: "Place infor"
+      user: User
+      admin: Admin
     header:
       welcome: "Welcome To Our Blog!"
       content: "It's Nice To Meet You"
@@ -94,13 +96,26 @@ en:
       view_more: View More >>
   users:
     new:
-      title: "SignUp"
+      title_new: "Sign Up"
+      btn_create: "Create my account"
+    edit:
+      title_edit: Edit Account
+      btn_edit: "Save changes"
+    index:
+      title: All User
+      sure: Do you want to delete it?
+    update:
+      update_success: Update account successful
+      update_failed: Update account failed
+    destroy:
+      delete_done: Delete account successful
+      delete_failed: Delete account failed
+    form:
       name: "Name"
       email: "Email"
       password: "Password"
       password_confirmation: "Confirmation"
-      create: "Create my account"
-      change_s: "Save changes"
+      upload_avatar: Upload Avatar
   shared:
     error_messages:
       form_contain: "The form contains "
@@ -115,6 +130,9 @@ en:
       new: "Create your account"
       signup: "SignUp"
       loginwith: "Or login with"
+    create:
+      welcome: Welcome %{name} to Blog Travel
+      waring: There was an error while trying to authenticate you
   controllers:
     session:
       err: "Login information is incorrect"
@@ -194,3 +212,4 @@ en:
   hotel: "Hotel"
   restaurant: "Restaurant"
   login_first: Please Login
+  waring_admin: Can not access

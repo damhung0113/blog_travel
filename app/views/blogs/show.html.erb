@@ -9,12 +9,14 @@
           </div>
           <% if current_user? @blog.user %>
           <div class="col-1">
+            <span>
             <div class="dropdown">
               <i class="fa fa-cog dropdown-toggle" aria-hidden="true" data-toggle="dropdown"></i>
               <div class="dropdown-menu">
                 <%= link_to t(".dd_edit"), edit_blog_path, class: "dropdown-item" %>
                 <%= link_to t(".dd_delete"), @blog, method: :delete, data: {confirm: t(".delete_confirm")}, class: "dropdown-item text-danger" %>
               </div>
+            </span>
             </div>
           </div>
           <% else %>

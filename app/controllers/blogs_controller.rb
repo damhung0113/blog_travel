@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   before_action :logged_in_user, except: %i(show)
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.sort_by_time.page(params[:page]).per 9
   end
 
   def new

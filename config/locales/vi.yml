@@ -24,6 +24,8 @@ vi:
       enter: "Nhập thông tin"
       district: "Quận"
       place: "Địa điểm"
+      user: Người dùng
+      admin: Quản lý
     header:
       welcome: "Chào mừng bạn đến Blog của chúng tôi!"
       content: "Thật vui được gặp bạn"
@@ -92,13 +94,26 @@ vi:
       view_more: Xem thêm >>
   users:
     new:
-      title: "Đăng ký"
+      title_new: "Đăng ký"
+      btn_create: "Tạo tài khoản"
+    edit:
+      title_edit: Chỉnh sửa tài khoản
+      btn_edit: "Lưu thay đổi"
+    index:
+      title: Tất cả người dùng
+      sure: Bạn chắc chắn muốn xóa chứ?
+    update:
+      update_success: Cập nhật tài khoản thành công
+      update_failed: Cập nhật tài khoản thất bại
+    destroy:
+      delete_done: Xóa tài khoản thành công
+      delete_failed: Xóa tài khoản thất bại
+    form:
       name: "Tên"
       email: "Email"
       password: "Mật khẩu"
       password_confirmation: "Xác nhận"
-      create: "Tạo tài khoản"
-      change_s: "Lưu thay đổi"
+      upload_avatar: Tải lên ảnh đại diện
   shared:
     error_messages:
       form_contant: "Nội dung biểu mẫu"
@@ -113,6 +128,9 @@ vi:
       new: "Tạo mới tài khoản"
       signup: "Đăng ký"
       loginwith: "Hoặc đăng nhập với"
+    create:
+      welcome: Chào mừng %{name} đến với Blog Travel
+      waring: Có lỗi xảy ra khi chúng tôi xác thực tài khoản của bạn
   controllers:
     session:
       err: "Thông tin đăng nhập không chính xác"
@@ -192,3 +210,4 @@ vi:
   hotel: "Khách sạn"
   restaurant: "Nhà hàng"
   login_first: Vui lòng đăng nhập
+  waring_admin: Không thể truy cập
