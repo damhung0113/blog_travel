@@ -185,3 +185,37 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.2;
   text-align:center
 }
+lable.checkbox_inline {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+.login-header{
+  padding-top:15px;
+}
+.a-login{
+  color: white;
+}
+.a-login:hover {
+  color: #fec503;
+  text-decoration: none;
+}
+li.dropdown{
+ margin-top: 15px;
+ margin-left: 10px;
+}
+a.dropdown-toggle{
+  color: #fff;
+  text-decoration: none;
+}
+ul.dropdown-menu.show{
+  text-align: center;
+  background-color: #888;
+}

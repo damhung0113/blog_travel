@@ -1,0 +1,34 @@
+<section class="signup">
+            <div class="container-sign">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title"><%= t(".title") %></h2>
+                        <%= form_for(:session, url: login_path) do |f| %>
+                            <div class="form-group">
+                                <%= f.email_field :email, class: "form-control",placeholder: t(".email") %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.password_field :password, class: "form-control",placeholder: t(".password") %>
+                            </div>
+                            <div class="form-group">
+                              <%= f.label :remember_me, class: "checkbox-inline" do %>
+                              <%= f.check_box :remember_me ,class: "checkbox-custom" %>
+                              <span><%= t(".remember") %></span>
+                              <% end %>
+                            </div>
+                            <div class="form-group form-button">
+                                <%= f.submit t(".login"), class: "form-submit" %>
+                        <% end %>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="social-label"><%= t(".loginwith") %></span>
+                            <%= link_to "#" do %>
+                              <i class="fa fa-facebook-f"></i>
+                            <% end %>
+                        </div>
+                        <p><%= t(".new") %><%= link_to t(".sign_up"), signup_path %></p>
+                    </div>
+                </div>
+            </div>
+        </section>

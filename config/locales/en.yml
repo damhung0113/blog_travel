@@ -13,6 +13,11 @@ en:
       login: "LOGIN"
       logo: "Blog Travel"
       menu: "MENU"
+      user: "USER"
+      account: "ACCOUNT"
+      profile: "PROFILE"
+      setting: "SETTING"
+      logout: "LOGOUT"
     header:
       welcome: "Welcome To Our Blog!"
       content: "It's Nice To Meet You"
@@ -88,3 +93,16 @@ en:
     error_messages:
       form_error: "The form contains "
       error: "error"
+  sessions:
+    new:
+      title: "Login"
+      email: "Email"
+      password: "Password"
+      login: "Login"
+      remember: "Remember"
+      new: "Create your account"
+      signup: "SignUp"
+      loginwith: "Or login with"
+  controllers:
+    session:
+      err: "Login information is incorrect"

@@ -13,6 +13,11 @@ vi:
       login: "Đăng nhập"
       logo: "Blog Du lịch"
       menu: "Mục lục"
+      user: "Người dùng"
+      account: "Tài khoản"
+      profile: "Hồ sơ"
+      setting: "Cài đặt"
+      logout: "Đăng xuất"
     header:
       welcome: "Chào mừng bạn đến Blog của chúng tôi!"
       content: "Thật vui được gặp bạn"
@@ -86,3 +91,16 @@ vi:
     error_messages:
       contant: "Nội dung biểu mẫu"
       error: "lỗi"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      login: "Đăng nhập"
+      remember: "Ghi nhớ"
+      new: "Tạo mới tài khoản"
+      signup: "Đăng ký"
+      loginwith: "Hoặc đăng nhập với"
+  controllers:
+    session:
+      err: "Thông tin đăng nhập không chính xác"
