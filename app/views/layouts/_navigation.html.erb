@@ -14,6 +14,24 @@
           <li class="nav-item">
             <%= link_to t(".new"), "#", class: "nav-link js-scroll-trigger" %>
           </li>
+          <li class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle fix_color", "data-toggle": "dropdown" do %>
+              <%= t ".discovery" %><b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu fix_center">
+              <li><%= link_to t(".hotel"), places_path(status: :hotel) %></li>
+              <li><%= link_to t(".restaurant"), places_path(status: :restaurant) %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle fix_color", "data-toggle": "dropdown" do %>
+              <%= t ".enter" %><b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu fix_center">
+              <li><%= link_to t(".district"), new_district_path %></li>
+              <li><%= link_to t(".place"), new_place_path %></li>
+            </ul>
+          </li>
           <li class="nav-item">
             <%= link_to t(".about"), "#", class: "nav-link js-scroll-trigger" %>
           </li>

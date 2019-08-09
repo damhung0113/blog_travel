@@ -18,6 +18,12 @@ en:
       profile: "PROFILE"
       setting: "SETTING"
       logout: "LOGOUT"
+      hotel: "Hotel"
+      restaurant: "Restaurant"
+      discovery: "Discovery"
+      enter: "Enter infor"
+      district: "District infor"
+      place: "Place infor"
     header:
       welcome: "Welcome To Our Blog!"
       content: "It's Nice To Meet You"
@@ -88,10 +94,10 @@ en:
       password: "Password"
       password_confirmation: "Confirmation"
       create: "Create my account"
-      change_s: "Save changes"  
+      change_s: "Save changes"
   shared:
     error_messages:
-      form_error: "The form contains "
+      form_contain: "The form contains "
       error: "error"
   sessions:
     new:
@@ -106,3 +112,49 @@ en:
   controllers:
     session:
       err: "Login information is incorrect"
+  districts:
+    new:
+      enter: "Enter district"
+      name: "Enter district name"
+      infor: "Enter information"
+      submit: "Submit"
+  places:
+    new:
+      enter: "Enter information"
+    edit:
+      update: "Update information"
+    index:
+      search: "Search"
+      hotel: "Hotel"
+      restaurant: "Restaurant"
+    place:
+      description: "Description: "
+      evaluate: "Evaluate: "
+      cost: "Cost: "
+      address: "Address: "
+      delete: "Delete"
+      edit: "Edit"
+      sure: "Are you sure ?"
+    form:
+      category: "Select category"
+      select: "- Select -"
+      district: "Select district"
+      name: "Name"
+      enter_name: "Enter name"
+      description: "Descrition"
+      enter_description: "Enter description"
+      address: "Address"
+      enter_address: "Enter address"
+      evaluate: "Evaluate"
+      cost: "Cost"
+      enter_cost: "Enter cost"
+      photo: "Photo"
+      submit: "Submit"
+  create_success: "Created success"
+  create_fail: "Created fail"
+  delete_success: "Deleted success"
+  delete_fail: "Deleted fail"
+  update_success: "Updated success"
+  not_found: "Not found"
+  hotel: "Hotel"
+  restaurant: "Restaurant"
