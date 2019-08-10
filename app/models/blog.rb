@@ -1,6 +1,7 @@
 class Blog < ApplicationRecord
   has_many :paragraphs, dependent: :destroy
   has_many :generals, dependent: :destroy, as: :generalable
+  has_many :likes, dependent: :destroy
   belongs_to :user
   belongs_to :district
 

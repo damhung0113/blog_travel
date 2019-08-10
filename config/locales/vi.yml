@@ -71,6 +71,7 @@ vi:
       dd_edit: Chỉnh sửa
       dd_delete: Xóa
       delete_confirm: Bạn chắc chắn muốn xóa chứ?
+      like: "lượt thích"
     create:
       success_create: Tạo Blog thành công
       failed_create: Tạo Blog thất bại, vui lòng thử lại

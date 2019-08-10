@@ -1,3 +1,11 @@
+User.create(
+  name: "Admin",
+  email: "admin123456@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  is_admin: true
+)
+
 5.times do |i|
   User.create([{
     name: Faker::Name.name,

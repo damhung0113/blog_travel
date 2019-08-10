@@ -1,0 +1,2 @@
+$('#like_form_<%= @blog.id %>').html('<%= j render("likes/unlike", blog: @blog, unlike: @like) %>');
+$('#like-size-<%= @blog.id %>').html('<%= @blog.likes.size %>');
