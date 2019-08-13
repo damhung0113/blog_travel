@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
+
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,
@@ -8,6 +10,7 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :generals, as: :generalable
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :comments, dependent: :destroy
 
@@ -17,7 +20,8 @@ class User < ApplicationRecord
   validates :email, format: {with: Settings.VALID_EMAIL_REGEX},
     presence: true, length: {maximum: Settings.maxEmail},
     uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: Settings.minPassword}, allow_nil: true
+  validates :password, presence: true,
+    length: {minimum: Settings.minPassword}, allow_nil: true
 
   mount_uploader :avatar, PictureUploader
 
@@ -27,12 +31,16 @@ class User < ApplicationRecord
 
   class << self
     def digest string
-      cost = if ActiveModel::SecurePassword.min_cost
-               BCrypt::Engine::MIN_COST
-             else
-               BCrypt::Engine.cost
-             end
+      cost = get_cost
       BCrypt::Password.create string, cost: cost
+    end
+
+    def get_cost
+      if ActiveModel::SecurePassword.min_cost
+        BCrypt::Engine::MIN_COST
+      else
+        BCrypt::Engine.cost
+      end
     end
 
     def new_token
@@ -80,7 +88,8 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth auth
-    where(provider: auth["provider"], uid: auth["uid"]).first_or_initialize.tap do |user|
+    where(provider: auth["provider"],
+      uid: auth["uid"]).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name

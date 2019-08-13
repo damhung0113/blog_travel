@@ -3,31 +3,47 @@ class SessionsController < ApplicationController
 
   def create
     if params[:session].present?
-      user = User.find_by_email params[:session][:email].downcase
-
-      if user&.authenticate params[:session][:password]
-        flash[:success] = t ".welcome", name: user.name
-        log_in user
-        params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-        redirect_to root_url
-      else
-        flash.now[:danger] = t("controllers.session.err")
-        render :new
-      end
+      login_normal
     else
-      begin
-        user = User.from_omniauth(request.env["omniauth.auth"])
-        flash[:success] = t ".welcome", name: user.name
-        log_in user
-        redirect_to root_url
-      rescue
-        flash[:waring] = t ".waring"
-      end
+      login_with_facebook
     end
   end
 
   def destroy
     log_out
     redirect_to login_path
+  end
+
+  private
+
+  def get_session_email
+    params[:session][:email].downcase
+  end
+
+  def check_session_remember
+    params[:session][:remember_me] == "1"
+  end
+
+  def login_normal
+    user = User.find_by email: get_session_email
+
+    if user && user.authenticate(params[:session][:password])
+      flash[:success] = t ".welcome", name: user.name
+      log_in user
+      check_session_remember ? remember(user) : forget(user)
+      redirect_to root_url
+    else
+      flash.now[:danger] = t("controllers.session.err")
+      render :new
+    end
+  end
+
+  def login_with_facebook
+    user = User.from_omniauth(request.env["omniauth.auth"])
+    flash[:success] = t ".welcome", name: user.name
+    log_in user
+    redirect_to root_url
+  rescue StandardError
+    flash[:waring] = "There was an error while trying to authenticate you"
   end
 end
