@@ -1,8 +1,9 @@
 class PlacesController < ApplicationController
   before_action :find_place, only: %i(show edit update destroy)
+  before_action :order_place, only: :index
 
   def index
-    @places = Place.send(params[:status]).page(params[:page]).per Settings.paginate
+    @blogs = Blog.sort_by_time.page(params[:page]).per Settings.paginate_blog
     @title = t params[:status]
   end
 
@@ -46,6 +47,14 @@ class PlacesController < ApplicationController
   end
 
   private
+
+  def order_place
+    @places = Place.send(params[:status])
+                   .find_address(params[:search])
+                   .order_by_vote(params[:order])
+                   .page(params[:page])
+                   .per Settings.paginate
+  end
 
   def place_params
     params.require(:place).permit Place::PLACE_ATTRIBUTE.freeze

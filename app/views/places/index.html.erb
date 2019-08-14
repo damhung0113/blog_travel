@@ -3,8 +3,26 @@
     <div class="row">
       <div class="col-4">
         <div class="fix_center">
-          <h1><%= t ".search" %></h1>
+          <h1><%= t ".search" %></h1><br><br>
         </div>
+        <%= form_tag places_path, method: :get do  %>
+          <% unless @places.empty? %>
+            <%= hidden_field_tag :status, @places.first.status %>
+          <% end %>
+          <h4><%= t ".order" %></h4>
+          <%= select_tag :order, options_for_select(["Desc", "Asc"]), {prompt: "Select"} %><br><br>
+          <h4><%= t ".search_address" %></h4>
+          <%= search_field_tag :search, params[:search], placeholder:"Search by address", class: "form-control" %>
+          <%= button_tag "Submit", class: "form-btn fix_btn" %><hr>
+          <h5><%= t ".new_blog" %></h5>
+          <% @blogs.each do |blog| %>
+            <%= image_tag blog.cover_photo.to_s, class: "img_thumbnail" %>
+            <%= link_to blog.topic, blog, class: "fix_topic" %><br>
+            <%= t ".authors" %><%= blog.user.name %><br>
+            <%= t ".posted" %><%= blog.created_at.strftime("%m-%d-%Y") %><hr>
+          <% end %>
+          <%= paginate @blogs, theme: "twitter-bootstrap-4" %>
+        <% end %>
       </div>
       <div class="col-8">
         <div class="fix_center">

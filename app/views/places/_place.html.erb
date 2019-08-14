@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-4">
-    <%= image_tag place.photo.url, class: "photo" if place.photo? %>
+    <%= image_tag place.photo.url, class: "photo" %>
   </div>
   <div class="col-8">
     <div class="name_place">
@@ -12,16 +12,24 @@
     <span class="item">
       <%= t ".evaluate" %>
     </span><% place.vote.times do %>
-      <i class="fa fa-star"></i>
+      <img class="fix_star" src="/assets/star1.png">
+    <% end %>
+    <% (5 - place.vote).times do %>
+      <img class="fix_star" src="/assets/star2.png">
     <% end %><br>
+    <span class="item">
+      <%= t ".district" %>
+    </span><%= place.district.name %><br>
     <span class="item">
       <%= t ".address" %>
     </span><%= place.address %><br>
     <span class="item">
       <%= t ".cost" %>
     </span><%= place.cost %><br>
+    <i class="fa fa-trash"></i>
     <%= link_to t(".delete"), place, method: :delete,
       data: { confirm: t(".sure") } %>
+    <i class="fa fa-wrench"></i>
     <%= link_to t(".edit"), edit_place_path(place) %>
   </div>
 </div><hr>

@@ -118,6 +118,10 @@ vi:
       name: "Nhập tên quận"
       infor: "Nhập thông tin"
       submit: "Xác nhận"
+      sure: "Chắc chắn xóa ?"
+      list: "Danh sách các quận"
+      sum: "Tổng cộng có"
+      district: "quận"
   places:
     new:
       enter: "Nhập thông tin"
@@ -127,6 +131,11 @@ vi:
       search: "Tìm kiếm"
       hotel: "Khách sạn"
       restaurant: "Nhà hàng"
+      order: "Sắp xếp theo sao: "
+      search_address: "Tìm kiếm theo địa chỉ: "
+      new_blog: "Bài viết mới: "
+      authors: "Tác giả: "
+      posted: "Đăng: "
     place:
       description: "Miêu tả: "
       evaluate: "Đánh giá: "
@@ -135,6 +144,7 @@ vi:
       delete: "Xóa"
       edit: "Sửa"
       sure: "Chắc chắn xóa ?"
+      district: "Quận/huyện: "
     form:
       category: "Chọn thể loại"
       select: "- Lựa chọn -"
