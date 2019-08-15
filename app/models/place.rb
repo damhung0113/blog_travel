@@ -1,4 +1,5 @@
 class Place < ApplicationRecord
+  has_many :bookmarks, dependent: :destroy, as: :bookmarkable
   belongs_to :district
   enum status: {hotel: 0, restaurant: 1}
   mount_uploader :photo, PhotoUploader
@@ -19,4 +20,6 @@ class Place < ApplicationRecord
   validates :cost, presence: true,
     length: {maximum: Settings.maximum_length_cost}
   validates :photo, presence: true
+
+  scope :get_place, ->(place_id){where id: place_id}
 end

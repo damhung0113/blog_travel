@@ -1,0 +1,17 @@
+<% if params[:status].present? %>
+  <span class="bookmark-blog-<%= place.id %>">
+    <% if current_user.place_bookmarked? place %>
+      <%= render "bookmarks/unbookmark", bookmark: Bookmark.get_bookmark(current_user.id, place.id, "Place") %>
+    <% else %>
+      <%= render "bookmarks/bookmark", place: place %>
+    <% end %>
+  </span>
+<% else %>
+  <span class="bookmark-blog-<%= blog.id %>">
+    <% if current_user.blog_bookmarked? blog %>
+      <%= render "bookmarks/unbookmark", bookmark: bookmark_blog %>
+    <% else %>
+      <%= render "bookmarks/bookmark", blog: blog %>
+    <% end %>
+  </span>
+<% end %>

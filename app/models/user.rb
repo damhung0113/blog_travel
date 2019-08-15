@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :generals, as: :generalable
   has_many :likes, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+
   before_save{email.downcase!}
 
   validates :name, presence: true, length: {maximum: Settings.maxName}
@@ -17,6 +19,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.minPassword},
     allow_nil: true
   has_secure_password
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
@@ -43,6 +46,20 @@ class User < ApplicationRecord
 
   def forget
     update remember_digest: nil
+  end
+
+  def current_user? user
+    self == user
+  end
+
+  def blog_bookmarked? blog
+    @get_bookmark_blog = Bookmark.get_bookmark self, blog, Settings.blog_s
+    @get_bookmark_blog.present?
+  end
+
+  def place_bookmarked? place
+    @get_bookmark_place = Bookmark.get_bookmark self, place, Settings.place_s
+    @get_bookmark_place.present?
   end
 
   private

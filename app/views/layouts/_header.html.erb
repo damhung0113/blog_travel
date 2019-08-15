@@ -1,9 +1,13 @@
+<% if logged_in? %>
+  <%= render "blogs/all_blog"  %>
+<% else %>
 <header class="masthead">
   <div class="container">
-    <div class="intro-text">
-      <div class="intro-lead-in"><%= t(".welcome") %></div>
-      <div class="intro-heading text-uppercase"><%= t(".content") %></div>
-      <%= link_to t(".signup"), signup_path , class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger" %>
-    </div>
+      <div class="intro-text">
+        <div class="intro-lead-in"><%= t(".welcome") %></div>
+        <div class="intro-heading text-uppercase"><%= t(".content") %></div>
+        <%= link_to t(".signup"), signup_path , class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger" %>
+      </div>
+    <% end %>
   </div>
 </header>

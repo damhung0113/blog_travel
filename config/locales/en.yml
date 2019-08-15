@@ -8,7 +8,7 @@ en:
       en: "Tiếng Anh"
       vi: "Vietnamese"
       home: "HOME"
-      new: "NEW"
+      new: "CREATE BLOG"
       about: "ABOUT"
       login: "LOGIN"
       logo: "Blog Travel"
@@ -54,8 +54,8 @@ en:
       select_district: Select District
       address: "Fill Specific Address, example: Number 434, Trần Khát Chân"
     index:
-      last_blog: LATEST BLOG POSTS
       title_index: All Blog
+      all_blog: All Blog
     new:
       title_new: New Blog
       btn_create: Create and Share
@@ -87,6 +87,10 @@ en:
       failed_destroy: Delete Failed
       success: Create Success
       failed: Create Failed
+    all_blog:
+      last_blog: LATEST BLOG POSTS
+      last_place: HOT PLACES
+      view_more: View More >>
   users:
     new:
       title: "SignUp"
@@ -169,3 +173,4 @@ en:
   not_found: "Not found"
   hotel: "Hotel"
   restaurant: "Restaurant"
+  login_first: Please Login

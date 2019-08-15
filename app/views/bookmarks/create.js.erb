@@ -1,0 +1,7 @@
+<% if params[:type] == Settings.blog_s %>
+$(".bookmark-blog-<%= @blog.id %>")
+  .html("<%= j render('bookmarks/unbookmark', bookmark: @get_bookmark_blog) %>");
+<% else %>
+$(".bookmark-blog-<%= @place.id %>")
+  .html("<%= j render('bookmarks/unbookmark', bookmark: @get_bookmark_place) %>");
+<% end %>

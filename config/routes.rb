@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     mount Ckeditor::Engine => "/ckeditor"
+
     resources :blogs do
       resources :likes
     end
+
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
     get "/login", to: "sessions#new"
@@ -13,5 +15,7 @@ Rails.application.routes.draw do
     resources :users
     resources :districts
     resources :places
+    resources :blogs
+    resources :bookmarks, only: %i(create destroy)
   end
 end
