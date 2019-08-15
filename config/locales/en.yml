@@ -34,18 +34,12 @@ en:
       Privacy: "Privacy Policy"
       Terms: "Terms of Use"
       statistic: "Statistic"
-      local: "309 localtion"
-      city: "Ha Noi"
-      user: "38630 user"
-      content: "in & out contry"
-      comment: "1326 comment"
+      local_city: "localtion Ha Noi"
+      user: "user in & out contry"
+      comment: "comment"
       share: "Shared"
-      checkin: "532 check-in"
+      checkin: "check-in"
       done: "Done"
-      image: "928 picture"
-      upload: "Uploaded"
-      album: "2282 album"
-      albumcreate: "Collection created"
   static_pages:
     home:
       title: "Home"
@@ -68,7 +62,7 @@ en:
       posted: "Posted:"
       address: "Address:"
       recent_blogs: RECENT BLOGS
-      cate_blogs: CATEGORY BLOGS
+      cate_blogs: RELATED PLACE
       related_posts: RELATED POSTS
       dd_edit: Edit
       dd_delete: Delete
@@ -116,6 +110,9 @@ en:
       password: "Password"
       password_confirmation: "Confirmation"
       upload_avatar: Upload Avatar
+    show:
+      author: "Author of"
+      there_are: There are
   shared:
     error_messages:
       form_contain: "The form contains "

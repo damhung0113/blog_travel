@@ -1,0 +1,8 @@
+<% if @user_followers.any? %>
+  <ul class="cus_index_user" id="users">
+    <%= render @user_followers %>
+  </ul>
+  <div class="cus_index_user" id="paginator">
+    <%= paginate @user_followers, remote: true, theme: "twitter-bootstrap-4" %>
+  </div>
+<% end %>

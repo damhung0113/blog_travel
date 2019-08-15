@@ -21,7 +21,6 @@
             <%= t ".authors" %><%= blog.user.name %><br>
             <%= t ".posted" %><%= blog.created_at.strftime("%m-%d-%Y") %><hr>
           <% end %>
-          <%= paginate @blogs, theme: "twitter-bootstrap-4" %>
         <% end %>
       </div>
       <div class="col-8">

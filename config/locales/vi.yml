@@ -34,18 +34,12 @@ vi:
       Privacy: "Chính sách sử dụng"
       Terms: "Điều khoản sử dụng"
       statistic: "Thống kê"
-      local: "309 Địa điểm"
-      city: "Hà Nội"
-      user: "38630 người sử dụng"
-      content: "trong & ngoài nước"
-      comment: "1326 bình luận"
+      local_city: "Địa điểm Hà Nội"
+      user: "người sử dụng trong & ngoài nước"
+      comment: "bình luận"
       share: "đã chia sẻ"
       checkin: "532 check-in"
       done: "đã thực hiện"
-      image: "928 hình ảnh"
-      upload: "được tải lên"
-      album: "2282 Bộ sưu tập"
-      albumcreate: "bộ sưu tập được tạo"
   static_pages:
     home:
       title: "Trang chủ"
@@ -68,7 +62,7 @@ vi:
       posted: "Thời gian:"
       address: "Địa chỉ:"
       recent_blogs: LIÊN QUAN
-      cate_blogs: THỂ LOẠI
+      cate_blogs: ĐỊA ĐIỂM LIÊN QUAN
       related_posts: GẦN NHẤT
       dd_edit: Chỉnh sửa
       dd_delete: Xóa
@@ -114,6 +108,8 @@ vi:
       password: "Mật khẩu"
       password_confirmation: "Xác nhận"
       upload_avatar: Tải lên ảnh đại diện
+    show:
+      author: Tác giả của
   shared:
     error_messages:
       form_contant: "Nội dung biểu mẫu"

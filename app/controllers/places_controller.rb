@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
   before_action :order_place, only: :index
 
   def index
-    @blogs = Blog.sort_by_time.page(params[:page]).per Settings.paginate_blog
+    @blogs = Blog.sort_by_time.take(3)
     @title = t params[:status]
   end
 
@@ -13,6 +13,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @blogs = Blog.sort_by_time.get_blog_by_district(@place.district_id).take(3)
     @commentable = @place
     @comment = @commentable.comments.build
   end
@@ -53,17 +54,17 @@ class PlacesController < ApplicationController
   private
 
   def order_place
-    if params[:status] == Settings.place_type
-      @places = Place.hotel.find_address(params[:search])
+    @places = if params[:status] == Settings.place_type
+                Place.hotel.find_address(params[:search])
                      .order_by_vote(params[:order])
                      .page(params[:page])
                      .per Settings.paginate
-    else
-      @places = Place.restaurant.find_address(params[:search])
+              else
+                Place.restaurant.find_address(params[:search])
                      .order_by_vote(params[:order])
                      .page(params[:page])
                      .per Settings.paginate
-    end
+              end
   end
 
   def place_params

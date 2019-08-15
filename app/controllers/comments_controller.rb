@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:success] = t "create_success"
 
-      if @comment.commentable_type == "Blog"
+      if @comment.commentable_type == Settings.blog_s
         redirect_to blog_path(id: @comment.commentable_id)
       else
         redirect_to place_path(id: @comment.commentable_id)
@@ -37,7 +37,7 @@ class CommentsController < ApplicationController
     if @comment.destroy
       flash[:success] = t "delete_success"
 
-      if @comment.commentable_type == "Blog"
+      if @comment.commentable_type == Settings.blog_s
         redirect_to blog_path(id: @comment.commentable_id)
       else
         redirect_to place_path(id: @comment.commentable_id)
@@ -57,11 +57,11 @@ class CommentsController < ApplicationController
   def load_commentable
     @type = params[:comment][:type]
 
-    if @type == "Blog"
-      @commentable = Blog.find_by id: params[:comment][:commentable_id]
-    else
-      @commentable = Place.find_by id: params[:comment][:commentable_id]
-    end
+    @commentable = if @type == "Blog"
+                     Blog.find_by id: params[:comment][:commentable_id]
+                   else
+                     Place.find_by id: params[:comment][:commentable_id]
+                   end
 
     return if @commentable
     flash[:danger] = t "not_found"
@@ -70,7 +70,7 @@ class CommentsController < ApplicationController
 
   def correct_comment
     @comment = current_user.comments.find_by id: params[:id]
-    
+
     return if @comment
     flash[:danger] = t "not found"
     redirect_to root_url

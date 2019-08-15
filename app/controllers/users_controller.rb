@@ -9,8 +9,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = @user.followers.page(params[:page]).per 10
-    return if @user
+    @users_following = @user.following.page(params[:page]).per 10
+    @user_followers = @user.followers.page(params[:page]).per 10
+    return if @users_following
     flash.now[:danger] = t("user.show.not_exits")
   end
 

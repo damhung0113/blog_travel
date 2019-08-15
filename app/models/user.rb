@@ -99,6 +99,10 @@ class User < ApplicationRecord
     end
   end
 
+  def is_login_facebook?
+    provider.blank?
+  end
+
   private
 
   def create_activation_digest

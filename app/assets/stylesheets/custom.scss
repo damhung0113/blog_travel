@@ -104,14 +104,12 @@ select {
   font-weight: bold;
 }
 
-<<<<<<< c6d5b9f3f2a98243fd8397689e2ca28c57e01f8a
 .fix_like {
   width: 35px;
-  margin-left: 150px;
+  margin-left: 102px;
+
 }
 
-=======
->>>>>>> details
 .replies {
   margin-left: 65px;
 }
@@ -223,6 +221,15 @@ div.static{
   width: 46%;
 }
 
+.box_action {
+  border: solid;
+  border-width: 0.1px;
+  text-align: center;
+  margin-bottom: 30px;
+  height: 80px;
+  margin-top: 20px;
+}
+
 .cp_blog {
   padding-bottom: 30px;
 }
@@ -320,10 +327,6 @@ div.static{
   margin-bottom: 20px;
 }
 
-<<<<<<< 3707a609d520e95bc85d45bcc6d5a304271d2c82
-// --- End Blog ---
-
-=======
 .paginate_blog {
   margin-left: 385px;
 }
@@ -336,13 +339,12 @@ div.static{
   margin-bottom: 20px;
 }
 
-.user_info {
-
+.cus_index_user {
+ margin: 10px;
 }
 
 // --- End User ---
 
->>>>>>> follow user
 display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
   display: flex;
   display: -webkit-flex; }

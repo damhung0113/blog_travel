@@ -1,0 +1,10 @@
+<div>
+  <% Place.get_place_by_district(@blog.district_id).take(3).each do |place| %>
+      <div class="cover_photo_blog_index">
+        <%= image_tag place.photo.to_s, class: "img_thumbnail" %>
+      </div>
+      <div class="post-article">
+        <span><%= link_to place.name, place, class: "topic_blog crop_text_2" %></span>
+      </div>
+  <% end %>
+</div>

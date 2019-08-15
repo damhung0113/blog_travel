@@ -15,11 +15,11 @@
       </div>
       <div class="ml-3">
         <i class="fa fa-file mr-3" aria-hidden="true"></i>
-        <%= "Tác giả của" %>
+        <%= t".author" %>
         <%= @user.blogs.count %>
         <%= "Blog" %><br>
         <i class="fa fa-users mr-3 mt-3" aria-hidden="true"></i>
-        <%= "There are" %>
+        <%= t".there_are" %>
         <strong id="followers">
           <%= @user.followers.size %>
         </strong>
@@ -33,6 +33,7 @@
       </div>
     </aside>
     <aside class="col-md-8">
+      <% if current_user? @user %>
       <div class="">
           <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
@@ -42,7 +43,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#follow">
+              <a class="nav-link" data-toggle="tab" href="#follow1">
+                <%= "Following" %>
+                (<%= @user.following.count %>)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#follow2">
                 <%= "Followers" %>
                 (<%= @user.followers.count %>)
               </a>
@@ -58,14 +65,21 @@
             <div id="myblogs" class="container tab-pane active"><br>
               <%= render "blogs/blog_user" %>
             </div>
-            <div id="follow" class="container tab-pane fade"><br>
-              <%= render "show_follow" %>
+            <div id="follow1" class="container tab-pane fade"><br>
+              <%= render "show_following" %>
+            </div>
+            <div id="follow2" class="container tab-pane fade"><br>
+              <%= render "show_followers" %>
             </div>
             <div id="bookmark" class="container tab-pane fade"><br>
               <%= render "bookmarks/all_bookmark" %>
             </div>
           </div>
         </div>
+        <% else %>
+        <h3><%= "Your Blog" %>(<%= @user.blogs.count %>)</h3>
+        <%= render "blogs/blog_user" %>
+        <% end %>
     </aside>
   </div>
 </div>
