@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :find_place, only: %i(show edit update destroy)
+  before_action :load_place, only: %i(show edit update destroy)
   before_action :order_place, only: :index
 
   def index
@@ -60,7 +60,7 @@ class PlacesController < ApplicationController
     params.require(:place).permit Place::PLACE_ATTRIBUTE.freeze
   end
 
-  def find_place
+  def load_place
     @place = Place.find_by id: params[:id]
 
     return if @place

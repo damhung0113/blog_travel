@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :blogs, dependent: :destroy
   has_many :generals, as: :generalable
+  has_many :likes, dependent: :destroy
   before_save{email.downcase!}
 
   validates :name, presence: true, length: {maximum: Settings.maxName}

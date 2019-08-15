@@ -71,6 +71,7 @@ en:
       dd_edit: Edit
       dd_delete: Delete
       delete_confirm: Do you want to delete it?
+      like: "Likes"
     create:
       success_create: Create Success
       failed_create: Create Failed

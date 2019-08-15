@@ -32,7 +32,18 @@
       </div>
       <div class="para_blog">
         <%= raw @blog.content %>
-      </div>
+      </div><hr>
+      <% unlike = @blog.likes.find { |like| like.user_id == current_user.id} %>
+      <span id="like_form_<%= @blog.id %>">
+        <% if unlike %>
+          <%= render "likes/unlike", blog: @blog, unlike: unlike %>
+        <% else %>
+          <%= render "likes/like", blog: @blog %>
+        <% end %>
+      </span><hr>
+      <span id="like-size-<%= @blog.id %>">
+        <%= @blog.likes.size %>
+      </span> <%= t ".like" %>
     </div>
     <div class="col-4">
       <div>
