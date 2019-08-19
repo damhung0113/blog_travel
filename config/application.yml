@@ -1,0 +1,5 @@
+development:
+  STRIPE_SECRET_KEY: "sk_test_redactedredactedredractedWdLb"
+  STRIPE_PUBLISHABLE_KEY: "pk_test_redactedredactedredractedAJb"
+  GMAIL_USERNAME: "user@gmail.com"
+  GMAIL_PASSWORD: "password"

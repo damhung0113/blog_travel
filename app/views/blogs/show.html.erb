@@ -19,35 +19,58 @@
           </div>
           <% else %>
           <div class="col-1">
-            <%= render "bookmarks/form_bookmark", blog: @blog, bookmark_blog: @bookmark_blog %>
+
           </div>
           <% end %>
         </div>
       </div>
-      <div class="cp_blog">
+      <div class="row">
         <%= image_tag @blog.cover_photo.to_s, class: "cover_photo_show" %>
-        <b><%= t ".authors" %></b>
-        <%= @blog.user.name %><br>
-        <b><%= t ".posted" %></b>
-        <%= @blog.created_at.strftime("%m-%d-%Y") %><br>
-        <b><%= t ".address" %></b>
-        <%= @blog.address %>
-        | <%= @blog.district.name %>
+        <div class="col-9 cp_blog">
+          <b><%= t ".authors" %></b>
+          <%= link_to @blog.user.name, user_path(@blog.user.id) %><br>
+          <b><%= t ".posted" %></b>
+          <%= @blog.created_at.strftime("%m-%d-%Y") %><br>
+          <b><%= t ".address" %></b>
+          <%= @blog.address %>
+          | <%= @blog.district.name %>
+        </div>
+        <div class="col-2">
+        </div>
       </div>
       <div class="para_blog">
         <%= raw @blog.content %>
-      </div><hr>
-      <% unlike = @blog.likes.find { |like| like.user_id == current_user.id} %>
-      <span id="like_form_<%= @blog.id %>">
-        <% if unlike %>
-          <%= render "likes/unlike", blog: @blog, unlike: unlike %>
-        <% else %>
-          <%= render "likes/like", blog: @blog %>
+      </div>
+      <% if logged_in? %>
+        <div class="row box_action">
+          <div class="pt-4 col-4">
+            <% unlike = @blog.likes.find { |like| like.user_id == current_user.id} %>
+            <div id="like_form_<%= @blog.id %>">
+              <% if unlike %>
+                <%= render "likes/unlike", blog: @blog, unlike: unlike %>
+              <% else %>
+                <%= render "likes/like", blog: @blog %>
+              <% end %>
+            </div>
+          </div>
+          <div class="pt-4 col-4">
+            <%= render "bookmarks/form_bookmark", blog: @blog, bookmark_blog: @bookmark_blog %>
+          </div>
+          <div class="pt-4 col-4">
+            <%= link_to '<i class="fa fa-share fa-2x" aria-hidden="true"></i>'.html_safe, "#" %>
+            <%= "Share" %>
+          </div>
+        </div>
+          <span id="like-size-<%= @blog.id %>">
+            <%= @blog.likes.size %>
+          </span> <%= t ".like" %>
+
+        <%= @blog.comments.count %> <%= t ".comment" %><br><br>
+        <% if logged_in? %>
+          <%= render "comments/comment_form", commentable: @commentable, comment_new: @comment, parent_id:nil %>
         <% end %>
-      </span><hr>
-      <span id="like-size-<%= @blog.id %>">
-        <%= @blog.likes.size %>
-      </span> <%= t ".like" %>
+        <%= comments_tree_for @commentable.comments.hash_tree(limit_depth: 2), @commentable, @comment %>
+      <% end %>
     </div>
     <div class="col-4">
       <div>
@@ -60,6 +83,9 @@
       </div>
       <div>
         <h3 class="rencent_cate_blog"><%= t ".cate_blogs" %></h3>
+        <div class="ml-4">
+          <%= render "places/related_place" %>
+        </div>
       </div>
     </div>
   </div>
@@ -77,7 +103,7 @@
           <%= image_tag blog.cover_photo.to_s, class: "img_thumbnail" %>
         </div>
         <div class="post-article">
-          <span><%= link_to blog.topic, blog, class: "topic_blog crop_text_2" %> </span>
+          <span><%= link_to blog.topic, blog, class: "topic_blog crop_text_2" %></span>
         </div>
       </div>
     <% end %>

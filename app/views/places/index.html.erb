@@ -10,10 +10,10 @@
             <%= hidden_field_tag :status, @places.first.status %>
           <% end %>
           <h4><%= t ".order" %></h4>
-          <%= select_tag :order, options_for_select(["Desc", "Asc"]), {prompt: "Select"} %><br><br>
+          <%= select_tag :order, options_for_select(["Desc", "Asc"]), {prompt: t(".select")} %><br><br>
           <h4><%= t ".search_address" %></h4>
-          <%= search_field_tag :search, params[:search], placeholder:"Search by address", class: "form-control" %>
-          <%= button_tag "Submit", class: "form-btn fix_btn" %><hr>
+          <%= search_field_tag :search, params[:search], placeholder: t(".search"), class: "form-control" %>
+          <%= button_tag t(".submit"), class: "form-btn fix_btn" %><hr>
           <h5><%= t ".new_blog" %></h5>
           <% @blogs.each do |blog| %>
             <%= image_tag blog.cover_photo.to_s, class: "img_thumbnail" %>
@@ -21,7 +21,6 @@
             <%= t ".authors" %><%= blog.user.name %><br>
             <%= t ".posted" %><%= blog.created_at.strftime("%m-%d-%Y") %><hr>
           <% end %>
-          <%= paginate @blogs, theme: "twitter-bootstrap-4" %>
         <% end %>
       </div>
       <div class="col-8">

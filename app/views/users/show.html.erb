@@ -1,18 +1,85 @@
 <% provide :title, !@user.nil? ? @user.name : t(".not_exits") %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <% if @user %>
-      <h1>
-        <%= @user.name %>
-      </h1>
-      <div>
-        <%= image_tag("avatar.jpeg", alt: "avatar", class: "img-avatar") %> 
+<div class="container">
+  <div class="row">
+    <aside class="col-md-4">
+      <div class="text-center">
+        <% if @user %>
+          <div class="mb-4">
+            <%= display_avatar @user, 180 %>
+          </div>
+          <h3><%= @user.name %></h3>
+          <%= render "follow_form" if logged_in? %>
+          <div class="horizontal">
+          </div>
+        <% end %>
       </div>
-      <% end %>
-    </section>
-    <section class="stats">
-      <%#= render "shared/stats" %>
-    </section>
-  </aside>
+      <div class="ml-3">
+        <i class="fa fa-file mr-3" aria-hidden="true"></i>
+        <%= t".author" %>
+        <%= @user.blogs.count %>
+        <%= "Blog" %><br>
+        <i class="fa fa-users mr-3 mt-3" aria-hidden="true"></i>
+        <%= t".there_are" %>
+        <strong id="followers">
+          <%= @user.followers.size %>
+        </strong>
+        <%= "followers" %><br>
+        <i class="fa fa-users mr-3 mt-3" aria-hidden="true"></i>
+        <%= "Following" %>
+        <strong id="following">
+          <%= @user.following.size %>
+        </strong>
+        <%= "people" %><br>
+      </div>
+    </aside>
+    <aside class="col-md-8">
+      <% if current_user? @user %>
+      <div class="">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#myblogs">
+                <%= "My Blogs" %>
+                (<%= @user.blogs.count %>)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#follow1">
+                <%= "Following" %>
+                (<%= @user.following.count %>)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#follow2">
+                <%= "Followers" %>
+                (<%= @user.followers.count %>)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#bookmark">
+                <%= "Bookmark" %>
+                (<%= @user.bookmarks.count %>)
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div id="myblogs" class="container tab-pane active"><br>
+              <%= render "blogs/blog_user" %>
+            </div>
+            <div id="follow1" class="container tab-pane fade"><br>
+              <%= render "show_following" %>
+            </div>
+            <div id="follow2" class="container tab-pane fade"><br>
+              <%= render "show_followers" %>
+            </div>
+            <div id="bookmark" class="container tab-pane fade"><br>
+              <%= render "bookmarks/all_bookmark" %>
+            </div>
+          </div>
+        </div>
+        <% else %>
+        <h3><%= "Your Blog" %>(<%= @user.blogs.count %>)</h3>
+        <%= render "blogs/blog_user" %>
+        <% end %>
+    </aside>
+  </div>
 </div>

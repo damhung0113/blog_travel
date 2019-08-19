@@ -64,6 +64,15 @@ h5 {
   width: 500px;
 }
 
+.fix_img_show {
+  width: 500px;
+  margin-left: 110px;
+}
+
+.fix_cmt {
+  margin-left: 50px;
+}
+
 .fix_dropdown {
   padding-top: 14px;
   margin-right: 10px
@@ -97,7 +106,12 @@ select {
 
 .fix_like {
   width: 35px;
-  margin-left: 150px;
+  margin-left: 102px;
+
+}
+
+.replies {
+  margin-left: 65px;
 }
 
 .form-btn {
@@ -113,14 +127,20 @@ select {
   .form-btn:hover {
     background: $btn_background2 }
 
+.form-cmt {
+  display: inline-block;
+  margin-bottom: 10px;
+  background: $btn_background1;
+  color: $btn_background3;
+  border-bottom: none;
+  width: auto;
+  padding: 5px 39px;
+  border-radius: 5px;
+  cursor: pointer; }
+  .form-btn:hover {
+    background: $btn_background2 }
+
 // --- Header-Footer ---
-
-img {
-  vertical-align: middle;
-  border-style: none;
-  width: 20px;
-
-}
 
 .static {
   text-align: left;
@@ -193,7 +213,21 @@ div.static{
   width: 27%;
   height: 250px;
   margin-left: 53px;
+  margin-bottom: 40px;
+}
+
+.box_user {
+  display: inline-block;
+  width: 46%;
+}
+
+.box_action {
+  border: solid;
+  border-width: 0.1px;
+  text-align: center;
   margin-bottom: 30px;
+  height: 80px;
+  margin-top: 20px;
 }
 
 .cp_blog {
@@ -293,7 +327,23 @@ div.static{
   margin-bottom: 20px;
 }
 
+.paginate_blog {
+  margin-left: 385px;
+}
+
 // --- End Blog ---
+
+// --- User ---
+
+.all_user {
+  margin-bottom: 20px;
+}
+
+.cus_index_user {
+ margin: 10px;
+}
+
+// --- End User ---
 
 display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
   display: flex;

@@ -1,9 +1,9 @@
 class BlogsController < ApplicationController
   before_action :load_blog, except: %i(index new create)
-  before_action :logged_in_user, except: %i(show)
+  before_action :logged_in_user, except: %i(show index)
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.sort_by_time.page(params[:page]).per 9
   end
 
   def new
@@ -42,7 +42,12 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @bookmark_blog = Bookmark.get_bookmark current_user.id, @blog.id, Settings.blog_s
+    if logged_in?
+      @bookmark_blog = Bookmark.get_bookmark current_user.id,
+        @blog.id, Settings.blog_s
+    end
+    @commentable = @blog
+    @comment = @commentable.comments.build
   end
 
   def destroy

@@ -1,0 +1,10 @@
+<% Blog.get_by_author(@user.id).sort_by_time.each do |blog| %>
+  <div class="box_user">
+    <div class="cover_photo_blog_index">
+      <%= image_tag blog.cover_photo.to_s, class: "img_thumbnail" %>
+    </div>
+    <div class="post-article">
+      <span><%= link_to blog.topic, blog, class: "topic_blog crop_text_2" %></span>
+    </div>
+  </div>
+<% end %>

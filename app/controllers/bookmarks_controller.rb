@@ -14,6 +14,7 @@ class BookmarksController < ApplicationController
     else
       @get_bookmark_place = Bookmark.get_bookmark(current_user.id,
         @place.id, Settings.place_s)
+
       @bookmark_place = current_user.bookmarks.build bookmarkable: @place
 
       respond_to do |format|

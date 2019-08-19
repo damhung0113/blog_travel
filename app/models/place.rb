@@ -1,13 +1,12 @@
 class Place < ApplicationRecord
-  has_many :bookmarks, dependent: :destroy, as: :bookmarkable
-  belongs_to :district
-  enum status: {hotel: 0, restaurant: 1}
-  mount_uploader :photo, PhotoUploader
   PLACE_ATTRIBUTE = %i(name district_id description address vote cost
     photo status).freeze
-  scope :find_address,
-    ->(params){where "address LIKE :search", search: "%#{params}%" if params.present?}
-  scope :order_by_vote, ->(params){order("vote #{params}")}
+  enum status: {hotel: 0, restaurant: 1}
+
+  has_many :bookmarks, dependent: :destroy, as: :bookmarkable
+  has_many :comments, as: :commentable, dependent: :destroy
+
+  belongs_to :district
 
   validates :name, presence: true,
     length: {maximum: Settings.maximum_length_name}
@@ -21,5 +20,11 @@ class Place < ApplicationRecord
     length: {maximum: Settings.maximum_length_cost}
   validates :photo, presence: true
 
+  mount_uploader :photo, PhotoUploader
+
+  scope :find_address,
+    ->(params){where "address LIKE :search", search: "%#{params}%" if params.present?}
+  scope :order_by_vote, ->(params){order("vote #{params}")}
   scope :get_place, ->(place_id){where id: place_id}
+  scope :get_place_by_district, ->(id){where district_id: id }
 end

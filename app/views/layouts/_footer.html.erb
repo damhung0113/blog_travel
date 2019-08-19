@@ -4,18 +4,20 @@
       <div class="col-md-4">
         <div class="static">
           <h3><%= t(".statistic") %></h3>
-          <%= t(".local") %>
-          <%= t(".city") %><br>
-          <%= t(".user") %>
-          <%= t(".content") %><br>
+          <%= Place.count %>
+          <%= t(".local_city") %><br>
+          <%= User.count %>
+          <%= t(".user") %><br>
+          <%= Comment.count %>
           <%= t(".comment") %>
           <%= t(".share") %><br>
+          <%= Blog.count %>
           <%= t(".checkin") %>
           <%= t(".done") %><br>
-          <%= t(".image") %>
-          <%= t(".upload") %><br>
-          <%= t(".album") %>
-          <%= t(".albumcreate") %>
+          <%#= t(".image") %>
+          <%#= t(".upload") %><br>
+          <%#= t(".album") %>
+          <%#= t(".albumcreate") %>
         </div>
       </div>
       <div class="col-md-4">
@@ -44,7 +46,9 @@
           </li>
           <li class="list-inline-item">
             <%= link_to t(".Terms"), "#" %>
-          </li>
+          </li><br>
+          <%= link_to image_tag("us.png", alt: "en"), locale:"en" %>
+          <%= link_to image_tag("vn.png", alt: "vi"), locale:"vi" %>
         </ul>
       </div>
     </div>

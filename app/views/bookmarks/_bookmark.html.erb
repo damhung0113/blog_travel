@@ -1,7 +1,8 @@
 <% if params[:controller] == Settings.blogs_s || @destroy == Settings.blog_s %>
-  <%= link_to '<i class="fa fa-bookmark-o" aria-hidden="true"></i>'.html_safe, bookmarks_path(user_id: current_user.id, blog_id: blog.id, type: Settings.blog_s),
+  <%= link_to '<i class="fa fa-bookmark-o fa-2x" aria-hidden="true"></i>'.html_safe, bookmarks_path(user_id: current_user.id, blog_id: blog.id, type: Settings.blog_s),
     method: :post, remote: true %>
 <% else %>
   <%= link_to '<i class="fa fa-bookmark-o fa-2x" aria-hidden="true"></i>'.html_safe, bookmarks_path(user_id: current_user.id, place_id: place.id, type: Settings.place_s),
     method: :post, remote: true %>
 <% end %>
+<%= "Bookmark" %>

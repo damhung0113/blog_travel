@@ -7,9 +7,6 @@
       <%= place.name %>
     </div>
     <span class="item">
-      <%= t ".description" %>
-    </span><%= place.description %><br>
-    <span class="item">
       <%= t ".evaluate" %>
     </span><% place.vote.times do %>
       <img class="fix_star" src="/assets/star1.png">
@@ -26,11 +23,14 @@
     <span class="item">
       <%= t ".cost" %>
     </span><%= place.cost %><br>
-    <i class="fa fa-trash"></i>
-    <%= link_to t(".delete"), place, method: :delete,
-      data: { confirm: t(".sure") } %>
-    <i class="fa fa-wrench"></i>
-    <%= link_to t(".edit"), edit_place_path(place) %>
     <%= render "bookmarks/form_bookmark", place: place %>
+    <%= link_to t(".see"), place_path(place) %><br>
+    <% if logged_in? && current_user.is_admin? %>
+      <i class="fa fa-trash"></i>
+      <%= link_to t(".delete"), place, method: :delete,
+        data: { confirm: t(".sure") } %>
+      <i class="fa fa-wrench"></i>
+      <%= link_to t(".edit"), edit_place_path(place) %>
+    <% end %>
   </div>
 </div><hr>

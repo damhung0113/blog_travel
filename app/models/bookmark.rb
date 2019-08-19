@@ -3,6 +3,5 @@ class Bookmark < ApplicationRecord
   belongs_to :user
 
   scope :get_bookmark,
-    ->(user_id, bookmarkable_id, type){where user_id: user_id,
-    bookmarkable_id: bookmarkable_id, bookmarkable_type: type}
+    ->(u, b, t){where user_id: u, bookmarkable_id: b, bookmarkable_type: t}
 end

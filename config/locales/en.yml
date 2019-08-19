@@ -24,6 +24,8 @@ en:
       enter: "Enter infor"
       district: "District infor"
       place: "Place infor"
+      user: User
+      admin: Admin
     header:
       welcome: "Welcome To Our Blog!"
       content: "It's Nice To Meet You"
@@ -32,18 +34,12 @@ en:
       Privacy: "Privacy Policy"
       Terms: "Terms of Use"
       statistic: "Statistic"
-      local: "309 localtion"
-      city: "Ha Noi"
-      user: "38630 user"
-      content: "in & out contry"
-      comment: "1326 comment"
+      local_city: "localtion Ha Noi"
+      user: "user in & out contry"
+      comment: "comment"
       share: "Shared"
-      checkin: "532 check-in"
+      checkin: "check-in"
       done: "Done"
-      image: "928 picture"
-      upload: "Uploaded"
-      album: "2282 album"
-      albumcreate: "Collection created"
   static_pages:
     home:
       title: "Home"
@@ -66,12 +62,13 @@ en:
       posted: "Posted:"
       address: "Address:"
       recent_blogs: RECENT BLOGS
-      cate_blogs: CATEGORY BLOGS
+      cate_blogs: RELATED PLACE
       related_posts: RELATED POSTS
       dd_edit: Edit
       dd_delete: Delete
       delete_confirm: Do you want to delete it?
       like: "Likes"
+      comment: "comments"
     create:
       success_create: Create Success
       failed_create: Create Failed
@@ -93,13 +90,29 @@ en:
       view_more: View More >>
   users:
     new:
-      title: "SignUp"
+      title_new: "Sign Up"
+      btn_create: "Create my account"
+    edit:
+      title_edit: Edit Account
+      btn_edit: "Save changes"
+    index:
+      title: All User
+      sure: Do you want to delete it?
+    update:
+      update_success: Update account successful
+      update_failed: Update account failed
+    destroy:
+      delete_done: Delete account successful
+      delete_failed: Delete account failed
+    form:
       name: "Name"
       email: "Email"
       password: "Password"
       password_confirmation: "Confirmation"
-      create: "Create my account"
-      change_s: "Save changes"
+      upload_avatar: Upload Avatar
+    show:
+      author: "Author of"
+      there_are: There are
   shared:
     error_messages:
       form_contain: "The form contains "
@@ -114,6 +127,9 @@ en:
       new: "Create your account"
       signup: "SignUp"
       loginwith: "Or login with"
+    create:
+      welcome: Welcome %{name} to Blog Travel
+      waring: There was an error while trying to authenticate you
   controllers:
     session:
       err: "Login information is incorrect"
@@ -141,6 +157,8 @@ en:
       new_blog: "New posts: "
       authors: "Authors: "
       posted: "Posted: "
+      submit: "Submit"
+      select: "Select"
     place:
       description: "Description: "
       evaluate: "Evaluate: "
@@ -150,6 +168,7 @@ en:
       edit: "Edit"
       sure: "Are you sure ?"
       district: "District: "
+      see: "See details"
     form:
       category: "Select category"
       select: "- Select -"
@@ -165,6 +184,22 @@ en:
       enter_cost: "Enter cost"
       photo: "Photo"
       submit: "Submit"
+    show:
+      review: "Review"
+      comment: "comments"
+      description: "Description: "
+      evaluate: "Evaluate: "
+      district: "District: "
+      address: "Address: "
+      cost: "Cost: "
+      related: "Related place"
+  comments:
+    comment:
+      sure: "Are you sure ?"
+      delete: "Delete"
+    comment_form:
+      add: "Add comment"
+      comment: "Comment"
   create_success: "Created success"
   create_fail: "Created fail"
   delete_success: "Deleted success"
@@ -174,3 +209,4 @@ en:
   hotel: "Hotel"
   restaurant: "Restaurant"
   login_first: Please Login
+  waring_admin: Can not access

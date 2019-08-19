@@ -1,4 +1,4 @@
-<br><br><br><br><% provide :title, t(".title_index") %>
+<% provide :title, t(".title_index") %>
 <div class="container">
   <div class="row">
     <div class="col-5 horizontal">
@@ -19,4 +19,9 @@
       </div>
     </div>
   <% end %>
+  <div class="paginate_blog">
+     <div id="paginator">
+      <%= paginate @blogs, theme: "twitter-bootstrap-4" %>
+    </div>
+  </div>
 </div>
